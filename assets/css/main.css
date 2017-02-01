@@ -743,7 +743,7 @@ footer {
       height: 180px;
       width: 180px;
       border-radius: 50%;
-      background: url(../img/android.jpg);
+      background: url(../img/face_flip.jpg);
       margin: auto; }
     .about-lock .flip-container {
       -webkit-perspective: 1000;
