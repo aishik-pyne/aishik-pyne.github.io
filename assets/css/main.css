@@ -738,12 +738,12 @@ footer {
       display: flex;
       margin: auto;
       border-radius: 60%;
-      background: url(../img/face.JPG) no-repeat; }
+      background: url(../img/face.jpg) no-repeat; }
     .about-lock .face1-img {
       height: 180px;
       width: 180px;
       border-radius: 50%;
-      background: url(../img/android.JPG);
+      background: url(../img/android.jpg);
       margin: auto; }
     .about-lock .flip-container {
       -webkit-perspective: 1000;
