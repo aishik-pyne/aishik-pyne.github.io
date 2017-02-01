@@ -1,0 +1,3 @@
+name: Aishik Pyne
+markdown: kramdown
+exclude: ["node_modules", "gulpfile.js", "package.json"]
