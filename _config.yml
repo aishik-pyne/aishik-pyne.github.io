@@ -1,14 +1,14 @@
 # Site
-title:              Aishik Swine
-bio:                'Aishik Swine'
-description:        "Swine"
+title:              Aishik Pyne
+bio:                'Aishik Pyne'
+description:        "Pyne"
 locale:             en_US
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 
 defaults:
 - scope:
-    path: '//'
+    path: ''
     type: posts
   values:
     permalink: "//www.xvideos.com"
@@ -31,7 +31,7 @@ sass:
   style:            compressed
 
 # Comments
-disqus_shortname:   aishikswine
+disqus_shortname:   aishikpyne
 
 # Social
 analytics-id:       UA-128233180-1
