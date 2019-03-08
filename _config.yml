@@ -11,12 +11,12 @@ defaults:
     path: ''
     type: posts
   values:
-    permalink: "//www.xvideos.com"
+    permalink: "/blog/:title/"
     layout: post
     author:
 
 # Jekyll
-permalink:          //
+permalink:          /blog/:title/
 markdown:           kramdown
 highlighter:        rouge
 kramdown:
@@ -54,7 +54,7 @@ gems:
   - jekyll-paginate
 
 paginate: 6
-paginate_path: "//www.xvideos.com"
+paginate_path: "/blog/page:num/"
 
 jekyll-mentions:
     base_url: https://github.com
