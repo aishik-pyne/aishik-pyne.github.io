@@ -8,15 +8,15 @@ url: "" # the base hostname & protocol for your site
 
 defaults:
 - scope:
-    path: '/'
+    path: '//'
     type: posts
   values:
-    permalink: "https://www.xvideos.com"
+    permalink: "//www.xvideos.com"
     layout: post
     author:
 
 # Jekyll
-permalink:          
+permalink:          //
 markdown:           kramdown
 highlighter:        rouge
 kramdown:
@@ -54,10 +54,10 @@ gems:
   - jekyll-paginate
 
 paginate: 6
-paginate_path: "www.xvideos.com"
+paginate_path: "//www.xvideos.com"
 
 jekyll-mentions:
-    base_url: https://www.xvideos.com
+    base_url: https://github.com
 
 # Exclude list
 exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile, old]
