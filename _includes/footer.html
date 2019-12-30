@@ -1,27 +1,43 @@
-<nav class="navbar is-black" role="navigation" aria-label="main navigation">
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // Get all "navbar-burger" elements
-            const $navbarBurgers = Array.prototype.slice.call(
-                document.querySelectorAll(".navbar-burger"),
-                0
-            );
-
-            // Check if there are any navbar burgers
-            if ($navbarBurgers.length > 0) {
-                // Add a click event on each of them
-                $navbarBurgers.forEach(el => {
-                    el.addEventListener("click", () => {
-                        // Get the target from the "data-target" attribute
-                        const target = el.dataset.target;
-                        const $target = document.getElementById(target);
-
-                        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-                        el.classList.toggle("is-active");
-                        $target.classList.toggle("is-active");
-                    });
-                });
-            }
-        });
-    </script>
-</nav>
+<section class="hero is-black is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Aishik Pyne
+            </h1>
+            <h2 class="subtitle"> </h2>
+            <div class="columns">
+                <div class="column is-one-fifths is-size-5">
+                    <ul class="level">
+                        <li class="level-item">
+                            <a href="https://twitter.com/{{site.twitter}}" class="icon has-text-white" rel="nofollow">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="level-item">
+                            <a href="https://facebook.com/{{site.facebook}}" class="icon has-text-white" rel="nofollow">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="level-item">
+                            <a href="https://instagram.com/{{site.instagram}}" class="icon has-text-white" rel="nofollow">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="level-item">
+                            <a href="https://github.com/{{site.github}}" class="icon has-text-white" rel="nofollow">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="level-item">
+                            <a href="https://linkedin.com/in/{{site.linkedin}}" class="icon has-text-white" rel="nofollow">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column is-two-thirds is-size-5"> </div>
+                <div class="column is-one-fifths is-size-5"> </div>
+            </div>
+        </div>
+    </div>
+</section>
