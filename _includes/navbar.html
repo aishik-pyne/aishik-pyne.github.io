@@ -1,54 +1,73 @@
-<div class="container is-fluid">
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="/">
-                <img src="/assets/images/logo.png" width="112" height="28" />
-            </a>
+<nav class="navbar is-fixed-top">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <img id="logo" src="/assets/images/logo.png" />
+        </a>
 
-            <a
-                role="button"
-                class="navbar-burger burger"
-                aria-label="menu"
-                aria-expanded="false"
-                data-target="navbarBasicExample"
-            >
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-end">
+            <a class="navbar-item" href="/">Home</a>
+            <a class="navbar-item" href="/travel">Travel</a>
+            <a class="navbar-item" href="/research">Research</a>
         </div>
-
-        <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-end">
-                <a class="navbar-item" href="/">Home</a>
-                <a class="navbar-item" href="/travel">Travel</a>
-                <a class="navbar-item" href="/research">Research</a>
-            </div>
-        </div>
-    </nav>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // Get all "navbar-burger" elements
-            const $navbarBurgers = Array.prototype.slice.call(
-                document.querySelectorAll(".navbar-burger"),
-                0
-            );
-
-            // Check if there are any navbar burgers
-            if ($navbarBurgers.length > 0) {
-                // Add a click event on each of them
-                $navbarBurgers.forEach(el => {
-                    el.addEventListener("click", () => {
-                        // Get the target from the "data-target" attribute
-                        const target = el.dataset.target;
-                        const $target = document.getElementById(target);
-
-                        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-                        el.classList.toggle("is-active");
-                        $target.classList.toggle("is-active");
-                    });
-                });
+    </div>
+</nav>
+<script>
+    function onScrollHandler() {
+        if (!$(".navbar-burger").hasClass("is-active") && $("#intro").length) {
+            if ($(document).scrollTop() < 250) {
+                $("nav").addClass("is-transparent");
+                $("a.navbar-item").addClass("has-text-light");
+                $("#logo").hide();
+            } else {
+                $("nav").removeClass("is-transparent");
+                $("a.navbar-item").removeClass("has-text-light");
+                $("#logo").show();
             }
-        });
-    </script>
-</div>
+        }
+    }
+    $(function() {
+        onScrollHandler();
+    });
+    $(window).scroll(function() {
+        onScrollHandler();
+    });
+    document.addEventListener("DOMContentLoaded", () => {
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll(".navbar-burger"), 0);
+
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
+            // Add a click event on each of them
+            $navbarBurgers.forEach(el => {
+                el.addEventListener("click", () => {
+                    // Get the target from the "data-target" attribute
+                    const target = el.dataset.target;
+                    const $target = document.getElementById(target);
+                    if ($("#intro").length) {
+                        if (!$target.classList.contains("is-active")) {
+                            $("nav").removeClass("is-transparent");
+                            $("a.navbar-item").removeClass("has-text-light");
+                            $("#logo").show();
+                        } else {
+                            $("nav").addClass("is-transparent");
+                            $("a.navbar-item").addClass("has-text-light");
+                            $("#logo").hide();
+                        }
+                    }
+                    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                    el.classList.toggle("is-active");
+                    $target.classList.toggle("is-active");
+                    onScrollHandler();
+                });
+            });
+        }
+    });
+</script>
