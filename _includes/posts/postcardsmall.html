@@ -1,0 +1,16 @@
+<article class="media">
+    <figure class="media-left image is-64x64">
+        <img src="{{include.image}}" alt="Image" />
+        <!-- <p class=""> -->
+        <!-- </p> -->
+    </figure>
+    <div class="media-content">
+        <div class="content">
+            <a href="{{include.url}}" class="has-text-black">
+                <strong>{{include.title}}</strong> <small>{{include.date | date_to_string }}</small>
+                <br />
+                <small> {{include.excerpt}} </small>
+            </a>
+        </div>
+    </div>
+</article>
