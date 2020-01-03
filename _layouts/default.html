@@ -6,16 +6,13 @@
         <title>{{site.title}}</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-        <link href="{{ site.baseurl }}/assets/css/travel.css" rel="stylesheet" />
+        <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet" />
+        <script src="/assets/js/jquery.min.js"></script>
     </head>
 
     <body class="body">
-        {% include navbar.html %}
-        {{ content }}
-        {% include footer.html %}
+        {% include navbar.html %} {{ content }} {% include footer.html %}
     </body>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+    {% include external/aos.html %}
+    {% include external/tracking.html %}
 </html>
