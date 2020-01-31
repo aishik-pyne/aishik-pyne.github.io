@@ -11,8 +11,9 @@ defaults:
     path: ''
     type: posts
   values:
-    permalink: "/:categories/:title/"
     layout: post
+    permalink: "/:categories/:title/"
+    excerpt_separator: <!--more-->
 - scope:
     path: '_posts/travel/'
   values:
