@@ -1,4 +1,4 @@
-<section class="hero is-large is-dark is-bold has-background">
+<section class="hero is-fullheight is-dark is-bold has-background">
     <img alt="Featured Image" class="hero-background is-transparent" src="{{page.featured_image}}" />
     <div class="hero-body">
         <div class="container">
@@ -6,8 +6,13 @@
                 {{include.title}}
             </h1>
             <h2 class="subtitle">
-                {{include.excerpt}}
+                {{include.date | date_to_string}}
             </h2>
+            <div class="tags">
+                {% for tag in include.tags %}
+                <span class="tag is-rounded">{{tag}}</span>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </section>
