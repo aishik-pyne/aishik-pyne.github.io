@@ -11,12 +11,16 @@ defaults:
     path: ''
     type: posts
   values:
-    permalink: "/blog/:title/"
     layout: post
-    author:
-
+    permalink: "/:categories/:title/"
+    excerpt_separator: <!--more-->
+- scope:
+    path: '_posts/travel/'
+  values:
+    categories:
+      - travel
 # Jekyll
-permalink:          /blog/:title/
+# permalink:          /blog/:title/
 markdown:           kramdown
 highlighter:        rouge
 kramdown:
@@ -26,9 +30,14 @@ kramdown:
   toc_levels:       1..6
   enable_coderay:   false
 mathjax:            true
+collections: 
+  travel:
+    output: true
+    permalink: /travel/:slug/
+  
 sass:
-  sass_dir:         _sass
-  style:            compressed
+  sass_dir: assets/css
+  style: compact # possible values: nested expanded compact compressed
 
 # Comments
 disqus_shortname:   aishikpyne
@@ -45,19 +54,19 @@ location:           Kolkata, India
 phone:
 email:              aishikpyne@gmail.com
 
-# Gems
-gems:
-  - jekyll-mentions
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
+# # Gems
+# gems:
+#   - jekyll-mentions
+#   - jekyll-sitemap
+#   - jekyll-feed
+#   - jekyll-gist
+#   - jekyll-paginate
 
-paginate: 6
-paginate_path: "/blog/page:num/"
+# paginate: 6
+# paginate_path: "/blog/page:num/"
 
 jekyll-mentions:
     base_url: https://github.com
 
 # Exclude list
-exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile, old]
+exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile, old, .archive2018]

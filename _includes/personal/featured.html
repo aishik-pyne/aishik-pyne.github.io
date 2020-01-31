@@ -1,0 +1,43 @@
+<section id="featued" class="section has-text-centered" data-aos="fade-up">
+    <div class="container">
+        <h1 class="title">Featued & New</h1>
+        <div id="carousel-demo" class="carousel">
+            {% for tag in site.tags %} 
+                {% if tag[0] == 'featured' %} 
+                    {% for post in tag[1] %} 
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-1by1">
+                                    <img src="{{post.thumbnail}}" alt="Image" />
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="media">
+                                    <a href="{{post.url}}" class="media-content">
+                                        <p class="title is-4">{{post.title}}</p>
+                                        <p class="subtitle is-6">
+                                            <time datetime="{{post.date | date_to_long_string: "ordinal" }}">
+                                                {{post.date | date_to_long_string: "ordinal" }}
+                                            </time>
+                                        </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    {%endfor%} 
+                {% endif %} 
+            {% endfor %}
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
+    <script>
+        bulmaCarousel.attach("#carousel-demo", {
+            slidesToScroll: 1,
+            slidesToShow: 4,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            duration: 500,
+            infinite: true
+        });
+    </script>
+</section>

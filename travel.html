@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<section class="section">
+    <div class="container">
+        <div class="columns is-multiline ">
+            {% for travel in site.categories.travel %}
+            <div class="column is-one-quarter " data-aos="fade-up" >
+                {% include posts/postcard.html url=travel.url title=travel.title date=travel.date image=travel.thumbnail
+                excerpt=travel.excerpt css="" %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
