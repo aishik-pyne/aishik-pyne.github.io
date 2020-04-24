@@ -1,0 +1,27 @@
+<div class="card {{include.css}}">
+    <div class="card-content">
+        <div class="media">
+            <div class="media-left">
+                <figure class="image is-48x48">
+                    <img src="{{include.image}}" alt="Image" />
+                </figure>
+              </div>
+            <a href="{{include.url}}" class="media-content">
+                <p class="title is-4">{{include.title}}</p>
+                <p class="subtitle is-6">
+                    <time datetime="{{include.date | date_to_long_string: "ordinal" }}">
+                        {{include.date | date_to_long_string: "ordinal" }}
+                    </time>
+                </p>
+            </a>
+        </div>
+
+        <div class="content">
+            {{include.excerpt}}
+        </div>
+    </div>
+    <footer class="card-footer">
+        <!-- <a href="{{include.url}}" class="card-footer-item">Share</a> -->
+        <a href="{{include.url}}" class="card-footer-item">Read More</a>
+    </footer>
+</div>
