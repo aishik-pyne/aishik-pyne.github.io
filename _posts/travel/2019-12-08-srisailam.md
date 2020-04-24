@@ -1,7 +1,7 @@
 ---
 title: Srisailam
-thumbnail: /assets/img/srisailam/srisailam_thumbnail.jpg
-featured_image: /assets/img/srisailam/srisailam.jpg
+thumbnail: /assets/img/travel/srisailam/srisailam_thumbnail.jpg
+featured_image: /assets/img/travel/srisailam/srisailam.jpg
 categories:
     - travel
 tags:

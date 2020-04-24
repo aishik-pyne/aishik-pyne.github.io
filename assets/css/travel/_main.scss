@@ -36,8 +36,17 @@ figure.avatar {
         background-image: none;
     }
 }
+
+.top-margin {
+    margin-top: 3rem;
+}
 @import url("https://fonts.googleapis.com/css?family=Righteous|Roboto|Merriweather&display=swap");
 @import "../external/bulma/bulma.sass";
 @import "/assets/css/external/animate/animate.css";
 @import "/assets/css/external/bulma/bulma-extensions.min.css";
 @import "/assets/css/external/bulma/bulma-carousel.min.css";
+
+
+.underline {
+    text-decoration: underline solid $primary;
+}
