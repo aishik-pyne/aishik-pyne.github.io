@@ -85,7 +85,7 @@
     });
 </script>
  <section id="intro" class="hero is-fullheight is-dark is-bold has-background">
-    <img alt="Featured Image" class="hero-background is-transparent" src="/assets/img/hero_bg.jpg" />
+    <img alt="Featured Image" class="hero-background is-transparent" id="hero_image" />
     <div class="hero-body">
         <div class="container">
             <h2 class="subtitle"> Hi </h2>
@@ -93,10 +93,24 @@
         </div>
     </div>
 </section>
+<script>
+    var hero_images = [
+        "/assets/img/heros/hero_1.jpg",
+        "/assets/img/heros/hero_2.jpg",
+        "/assets/img/heros/hero_3.jpg",
+        "/assets/img/heros/hero_4.jpg",
+        "/assets/img/heros/hero_5.jpg",
+        "/assets/img/heros/hero_6.jpg",
+        "/assets/img/heros/hero_7.jpg",
+        "/assets/img/heros/hero_8.jpg",
+    ];
+
+    document.getElementById("hero_image").src = hero_images[Math.floor(Math.random() * hero_images.length)];
+</script>
 
 <section id="featued" class="section has-text-centered" data-aos="fade-up-right">
     <div class="container">
-        <h1 class="title">Featued & New</h1>
+        <h1 class="title underline">Featued & New ✨</h1>
         <div id="carousel-demo" class="carousel">
              
                  
@@ -110,8 +124,8 @@
                             <div class="card-content">
                                 <div class="media">
                                     <a href="/project/infinite-taboo/" class="media-content">
-                                        <p class="title is-4">Infinite Taboo</p>
-                                        <p class="subtitle is-6">
+                                        <p class="title underline is-4">Infinite Taboo</p>
+                                        <p class="subtitle underline is-6">
                                             <time datetime="10th April 2020">
                                                 10th April 2020
                                             </time>
@@ -130,8 +144,8 @@
                             <div class="card-content">
                                 <div class="media">
                                     <a href="/travel/vietnam/" class="media-content">
-                                        <p class="title is-4">10 Days in Vietnam</p>
-                                        <p class="subtitle is-6">
+                                        <p class="title underline is-4">10 Days in Vietnam</p>
+                                        <p class="subtitle underline is-6">
                                             <time datetime="20th January 2020">
                                                 20th January 2020
                                             </time>
@@ -150,8 +164,8 @@
                             <div class="card-content">
                                 <div class="media">
                                     <a href="/travel/medak/" class="media-content">
-                                        <p class="title is-4">Medak</p>
-                                        <p class="subtitle is-6">
+                                        <p class="title underline is-4">Medak</p>
+                                        <p class="subtitle underline is-6">
                                             <time datetime="15th January 2020">
                                                 15th January 2020
                                             </time>
@@ -170,8 +184,8 @@
                             <div class="card-content">
                                 <div class="media">
                                     <a href="/travel/srisailam/" class="media-content">
-                                        <p class="title is-4">Srisailam</p>
-                                        <p class="subtitle is-6">
+                                        <p class="title underline is-4">Srisailam</p>
+                                        <p class="subtitle underline is-6">
                                             <time datetime="8th December 2019">
                                                 8th December 2019
                                             </time>
@@ -190,8 +204,8 @@
                             <div class="card-content">
                                 <div class="media">
                                     <a href="/travel/nalgonda/" class="media-content">
-                                        <p class="title is-4">Nalgonda</p>
-                                        <p class="subtitle is-6">
+                                        <p class="title underline is-4">Nalgonda</p>
+                                        <p class="subtitle underline is-6">
                                             <time datetime="12th November 2019">
                                                 12th November 2019
                                             </time>
@@ -210,8 +224,8 @@
                             <div class="card-content">
                                 <div class="media">
                                     <a href="/travel/anantagiri/" class="media-content">
-                                        <p class="title is-4">Anantagiri</p>
-                                        <p class="subtitle is-6">
+                                        <p class="title underline is-4">Anantagiri</p>
+                                        <p class="subtitle underline is-6">
                                             <time datetime="1st June 2018">
                                                 1st June 2018
                                             </time>
@@ -230,8 +244,8 @@
                             <div class="card-content">
                                 <div class="media">
                                     <a href="/project/twenty-nine/" class="media-content">
-                                        <p class="title is-4">Twenty Nine</p>
-                                        <p class="subtitle is-6">
+                                        <p class="title underline is-4">Twenty Nine</p>
+                                        <p class="subtitle underline is-6">
                                             <time datetime="1st January 2018">
                                                 1st January 2018
                                             </time>
@@ -250,8 +264,8 @@
                             <div class="card-content">
                                 <div class="media">
                                     <a href="/travel/ladakh/" class="media-content">
-                                        <p class="title is-4">Ladakh</p>
-                                        <p class="subtitle is-6">
+                                        <p class="title underline is-4">Ladakh</p>
+                                        <p class="subtitle underline is-6">
                                             <time datetime="1st June 2017">
                                                 1st June 2017
                                             </time>
@@ -270,8 +284,8 @@
                             <div class="card-content">
                                 <div class="media">
                                     <a href="/travel/corbett/" class="media-content">
-                                        <p class="title is-4">Corbett</p>
-                                        <p class="subtitle is-6">
+                                        <p class="title underline is-4">Corbett</p>
+                                        <p class="subtitle underline is-6">
                                             <time datetime="1st June 2017">
                                                 1st June 2017
                                             </time>
@@ -305,7 +319,7 @@
         <div class="columns is-centered">
             <div class="column is-4">
                 <div class="section" data-aos="fade-up-right">
-                    <h1 class="title">About Me</h1>
+                    <h1 class="title underline">About Me 👨‍🎓</h1>
                     <figure class="image avatar is-128x128">
                         <img class="is-rounded" src="/assets/img/dp.jpg" />
                     </figure>
@@ -317,7 +331,7 @@
             </div>
             <div class="column is-4">
                 <div class="section" data-aos="fade-up-right">
-                    <h1 class="title">Skills</h1>
+                    <h1 class="title underline">Skills 🤹‍♀️</h1>
                     <div class="content">
                         <h1 class="is-size-4">Languages I know</h1>
                         <div class="tags is-rounded is-centered">
@@ -359,7 +373,7 @@
 
 <section class="section" data-aos="fade-up-right">
     <div class="container">
-        <h1 class="title has-text-centered">Timeline</h1>
+        <h1 class="title underline has-text-centered">Timeline ⌚</h1>
 
         <div class="timeline is-centered">
             <header class="timeline-header">
