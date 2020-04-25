@@ -5,6 +5,11 @@
 $family-primary: Righteous, Roboto, sans-serif;
 $family-secondary: Roboto;
 
+.body {
+    width: 100%;
+    float: left;
+    overflow: hidden;
+}
 .hero.has-background {
     position: relative;
     overflow: hidden;
@@ -45,7 +50,6 @@ figure.avatar {
 @import "/assets/css/external/animate/animate.css";
 @import "/assets/css/external/bulma/bulma-extensions.min.css";
 @import "/assets/css/external/bulma/bulma-carousel.min.css";
-
 
 .underline {
     text-decoration: underline solid $dark;
