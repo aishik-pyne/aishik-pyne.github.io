@@ -1,7 +1,8 @@
 // This is a partial.
 // It lies in <source>/_sass, just waiting to be imported.
 // It does not contain the YAML front matter and has no corresponding output file in the built site.
-$family-primary: Righteous;
+@import url("https://fonts.googleapis.com/css?family=Righteous|Roboto&display=swap");
+$family-primary: Righteous, Roboto, sans-serif;
 $family-secondary: Roboto;
 
 .hero.has-background {
@@ -40,7 +41,6 @@ figure.avatar {
 .top-margin {
     margin-top: 3rem;
 }
-@import url("https://fonts.googleapis.com/css?family=Righteous|Roboto|Merriweather&display=swap");
 @import "../external/bulma/bulma.sass";
 @import "/assets/css/external/animate/animate.css";
 @import "/assets/css/external/bulma/bulma-extensions.min.css";
@@ -48,5 +48,5 @@ figure.avatar {
 
 
 .underline {
-    text-decoration: underline solid $primary;
+    text-decoration: underline solid $dark;
 }
