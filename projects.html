@@ -6,7 +6,7 @@ layout: default
 </section>
 <section class="section">
     <div class="columns is-centered">
-        <div class="column is-half has-text-centered" data-aos="fade-up-left">
+        <div class="column is-half has-text-centered" data-aos="fade-up-right">
             <h1 class="title underline"> Projects 📃 </h1>
             <br>
             <h1 class="subtitle"> Here is a list of "weekend" projects I'm up to learn, discover and create new things 😃 </h1>
@@ -15,7 +15,7 @@ layout: default
     <div class="container">
         {% for project in site.categories.project %}
         <div class="columns is-centered">
-            <div class="column is-half" data-aos="fade-up-left">
+            <div class="column is-half" data-aos="fade-up-right">
                 {% include posts/projects/projectcard.html url=project.url title=project.title date=project.date image=project.thumbnail
                 excerpt=project.excerpt css="" %}
             </div>
