@@ -27,3 +27,7 @@ To crop from center with offset in an aspect ratio in x & y axis
 ```bash
 magick.exe source.jpg -gravity center -crop 9:16+400+400  result.jpg 
 ```
+
+## To Create Favicon
+
+magick convert .\aplogo16x16_light.png .\aplogo32x32light.png .\aplogo48x18light.png favicon.ico
