@@ -7,6 +7,9 @@ categories:
 tags:
     - featured
     - hyderabad-getaways
+location:
+    lat: 16.073464980244943
+    lng: 78.86874674324339
 ---
 
 A two day cruise to a beatiful landscape covering a range of terrains

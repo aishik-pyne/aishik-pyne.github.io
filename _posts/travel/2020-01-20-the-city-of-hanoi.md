@@ -7,6 +7,9 @@ categories:
 tags:
     - featured
     - 10-days-in-vietnam
+location:
+    lat: 21.027337347625867
+    lng: 105.83523158253895
 ---
 In January of 2020, I decided to travel to Vietnam and visit breathtaking landscapes and try out the local Vietnamese food.
 <!--more-->
