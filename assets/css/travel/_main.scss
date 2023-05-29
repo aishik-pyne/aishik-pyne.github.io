@@ -62,8 +62,10 @@ figure.avatar {
   margin-left: 1em;
 }
 
-.hero .hero-body {
-  align-items: end
+.hero {
+  &.is-post .hero-body {
+    align-items: end
+  }
 }
 
 @import "../external/bulma/bulma.sass";
