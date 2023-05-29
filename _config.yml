@@ -1,10 +1,11 @@
 # Site
 title:              Aishik Pyne
+author:             Aishik Pyne
 bio:                'Aishik Pyne'
 description:        "Pyne"
 locale:             en_US
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+url: "https://aishikpyne.com" # the base hostname & protocol for your site
 
 defaults:
 - scope:
@@ -12,28 +13,33 @@ defaults:
     type: posts
   values:
     layout: post
+    toc: true
     permalink: "/:categories/:title/"
-    excerpt_separator: <!--more-->
 - scope:
     path: '_posts/travel/'
   values:
+    layout: post
+    toc: true
     categories:
       - travel
 # Jekyll
 # permalink:          /blog/:title/
 markdown:           kramdown
 highlighter:        rouge
+excerpt_separator: <!--more-->
 kramdown:
+  input: GFM
   auto_ids:         true
   footnote_nr:      1
   entity_output:    as_char
   toc_levels:       1..6
   enable_coderay:   false
+  parse_block_html: true
 mathjax:            true
 collections: 
   travel:
     output: true
-    permalink: /travel/:slug/
+    permalink: /:collection/:title
   
 sass:
   sass_dir: assets/css
@@ -54,8 +60,9 @@ location:           Kolkata, India
 phone:
 email:              aishikpyne@gmail.com
 
-# # Gems
-# gems:
+# Plugins
+plugins:
+  - jekyll-toc
 #   - jekyll-mentions
 #   - jekyll-sitemap
 #   - jekyll-feed
@@ -64,6 +71,7 @@ email:              aishikpyne@gmail.com
 
 # paginate: 6
 # paginate_path: "/blog/page:num/"
+
 
 jekyll-mentions:
     base_url: https://github.com
