@@ -2,55 +2,76 @@
 // It lies in <source>/_sass, just waiting to be imported.
 // It does not contain the YAML front matter and has no corresponding output file in the built site.
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Righteous&display=swap");
+
+@import "../external/bulma/sass/utilities/_all.sass";
+
 $family-primary: 'Righteous', 'Open Sans', sans-serif;
-$family-secondary: 'Open Sans', 'sans-serif';
+$family-secondary: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, open sans, helvetica neue, sans-serif;
+// $family-secondary: Ubuntu, BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", 'Open Sans', 'sans-serif';
+$desktop: 760px;
+$content-heading-weight: $weight-bold;
 
 .body {
-    width: 100%;
-    float: left;
-    overflow: hidden;
+  width: 100%;
+  float: left;
+  overflow: hidden;
 }
+
 .hero.has-background {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
+
 .hero-background {
-    position: absolute;
-    object-fit: cover;
-    object-position: center center;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+  height: 100%;
 }
+
 .hero-background.is-transparent {
-    opacity: 0.7;
+  opacity: 0.7;
 }
+
 .is-divider {
-    display: block;
-    position: relative;
-    border-top: 0.1rem solid rgb(173, 173, 173);
-    height: 0.1rem;
-    margin: 1rem 0;
-    text-align: center;
+  display: block;
+  position: relative;
+  border-top: 0.1rem solid rgb(173, 173, 173);
+  height: 0.1rem;
+  margin: 1rem 0;
+  text-align: center;
 }
+
 figure.avatar {
-    margin: 0 auto 2rem;
+  margin: 0 auto 2rem;
 }
 
 .navbar {
-    &.is-transparent {
-        background-color: transparent;
-        background-image: none;
-    }
+  &.is-transparent {
+    background-color: transparent;
+    background-image: none;
+  }
 }
 
 .top-margin {
-    margin-top: 3rem;
+  margin-top: 3rem;
 }
+
+.content ul ul {
+  margin-left: 1em;
+}
+
+.hero .hero-body {
+  align-items: end
+}
+
 @import "../external/bulma/bulma.sass";
 @import "/assets/css/external/animate/animate.css";
-@import "/assets/css/external/bulma/bulma-extensions.min.css";
-@import "/assets/css/external/bulma/bulma-carousel.min.css";
+@import "/assets/css/external/bulma_extensions/bulma-extensions.min.css";
+@import "/assets/css/external/bulma_extensions/bulma-carousel.min.css";
+@import "/assets/css/external/bulma_extensions/bulma-collapsible.min.css";
 
 .underline {
-    text-decoration: underline solid $dark;
+  text-decoration: underline solid $dark;
 }

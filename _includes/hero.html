@@ -6,7 +6,9 @@
                 {{include.title}}
             </h1>
             <h2 class="subtitle">
-                {{include.date | date_to_string}}
+                {{include.date | date_to_string}} · 
+                {% include readingtime.html %} · 
+                {{ site.author }}
             </h2>
             <div class="tags">
                 {% for tag in include.tags %}
