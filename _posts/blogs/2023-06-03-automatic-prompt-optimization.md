@@ -9,25 +9,24 @@ tags:
     - LLMs
 ---
 
-Given you have a task $x$, and an Large Language Model $LLM_p(x)$, what is a best prompt $p$ which produces the desired solution $y$? 
+Given you have a task $x$, and an Large Language Model $LLM_p(x)$, what is a best prompt $p$ which produces the desired solution $y$?
 
 <!-- more-->
 
 [“Automatic Prompt Optimization with ‘Gradient Descent’ and Beam Search.”](http://arxiv.org/abs/2305.03495) tries to answer this question, by optimizing the discrete prompt $p$, with non-paramteric "gradient decent" and [beam search](https://en.wikipedia.org/wiki/Beam_search#:~:text=In%20computer%20science%2C%20beam%20search,that%20reduces%20its%20memory%20requirements).
 
- 
-
 # Problem Formulation
 
 The proposed Automatic Prompt Optimization (APO) framework assumes access to:
+
 1. An **initial prompt** $p_0$ which is usually naively handcrafted to solve the task $T(x) \rightarrow y$, where the the prompt $p_0$, query $x$ and ground-truth output $y$ all belong to the space of coherent natural language $\mathcal{L}$
-2. An **[i.i.d](https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables) dataset**, $D_{tr} = \{(x_1, y_1), (x_2, y_2), \dots, (x_n, y_n)\}$ corresponding to the task $T$
-3. A black box **LLM API** $LLM(p, x) \approx \argmax_{y\in \mathcal{L}} P_{LLM}(y|p, x)$, where $y$ is the most likely text continuation of the concatenated prompt $p$ and query $x$
+2. An **[i.i.d](https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables) dataset**, $D_{tr} = \{(x_1, y_1), (x_2, y_2), \dots, (x_n, y_n)\}$ corresponding to the task $T$.  
+3. A black box **LLM API** $LLM(p, x) \approx \underset{y \in \mathcal{L}}{\operatorname{argmax}} P_{LLM(y\|p, x)}$ , where $y$ is the most likely text continuation of the concatenated prompt $p$ and query $x$
 4. A **metric** function $m(p, D_{te})$, which quantitatively measures how good the prompt $p$ is on a test dataset $D_{te}$
 
-# Propsed Algorithm for APO
+# Proposed Algorithm for APO
 
-The proposed algorithm, iteratively refines the prompt $p_0$ to produce $\hat{p}$, which is an approximation of the optimal prompt $p^* = \argmax_{y\in \mathcal{L}} m(p, D_{te})$. It does so by performing "textual gradient decent" which "guides" the prompts towards improvement. Then it uses these gradients to beam search the space of coherent natural language
+The proposed algorithm, iteratively refines the prompt $p_0$ to produce $\hat{p}$, which is an approximation of the optimal prompt $p^* = \\underset{y\in \mathcal{L}}{\operatorname{argmax}} m(p, D_{te})$. It does so by performing "textual gradient decent" which "guides" the prompts towards improvement. Then it uses these gradients to beam search the space of coherent natural language
 
 ![Illustration of APO using Gradient Descent](/assets/img/blog/2023-06-03-automatic-prompt-optimization/apo_algo.jpg)  
 *[R. Pryzant et al. 2023]((http://arxiv.org/abs/2305.03495)) Illustration of APO: The text dialogue tree we use to mirror gradient descent and overcome the discrete optimization barrier. First, a feedback prompt ∆ generates the gradient g from input data (x, y) and starting prompt p0 and prediction ˆ y (left). Second, an editing prompt δ applies the gradient g to the prompt p0 to produce an improved prompt p′ (right).*
