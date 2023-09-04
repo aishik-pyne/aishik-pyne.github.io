@@ -1,0 +1,80 @@
+% File SDSS2020_SampleExtendedAbstract.tex
+\documentclass[10pt]{article}
+\usepackage{sdss2020} % Uses Times Roman font (either newtx or times package)
+\usepackage{url}
+\usepackage{latexsym}
+\usepackage{amsmath, amsthm, amsfonts}
+\usepackage{algorithm, algorithmic}  
+\usepackage{graphicx}
+\usepackage{hyperref}
+\graphicspath{ {./images/} }
+
+\title{CS6284 Project Proposal: CollabPoker}
+
+\author{
+  Aishik Pyne \\
+      A0250592E \\
+      {\tt e0945774@u.nus.edu} \\
+      {\tt aipyne@comp.nus.edu.sg} \\\And
+  Harshavardhan Abichandani \\
+      A0250610X \\
+      {\tt e0945792@u.nus.edu} \\
+      {\tt harsh@comp.nus.edu.sg} \\\And
+  Niharika Shrivastava› \\
+      A0254355A \\
+      {\tt e0954756@u.nus.edu} \\
+      {\tt niharikacomp.nus.edu.sg}}
+  
+
+\date{}
+
+\begin{document}
+\maketitle
+
+% \begin{abstract}
+% \end{abstract}
+
+
+
+\section{Introduction}
+In this project, we aim to achieve the following 3 goals
+\begin{enumerate}
+    \item Implement a single-agent poker-playing AI where the policy is learned in distributed adversarial setup using common RL methods, such as DQNs, SAC, ReBeL \cite{DBLP:journals/corr/abs-2007-13544}.
+    
+    \item Train a multi-agent collaborative poker playing algorithm, with the objective of - Can two agents learn to play collaboratively so that they jointly can beat n other agents playing as single agents. We shall consider two styles of agents for this task
+    \begin{enumerate}
+        \item Full observable: In a simplistic case the multi-agent will be given access to the other player's hand.
+        \item Partial observable:  For simulation of a more practical case, the collaborative agents would know the position of the other agents but will have no access to the hands. 
+    \end{enumerate}
+    
+    \item If these two policies are learned optimally, can a discriminator be learned to discriminate the play styles of the policies by observing the actions taken by players and the overall game state? If so this discriminator can be used to detect cheating at casinos.
+\end{enumerate}
+These tasks are very challenging because the agents only received partial information about the environment and has to learn to operate optimally which dealing with uncertainty.
+
+\section{Environment}
+\href{https://github.com/datamllab/rlcard}{The RLCard Simulator} is proposed to be used for simulation. It is capable of simulating a lot of card-based game environments but we are interested in Limit-Holdem-Poker. The RL Card Library also has an extension \href{https://github.com/datamllab/rlcard-showdown}{RLCardShowdown} to visualize the simulation of RL-Card
+
+
+\section{Experiments}
+
+\subsection{Single-Agent Poker AI}
+We set up a poker table of 5 or 7 agents each agent or player shares the same policy. 
+A single-agent poker AI policy $\pi_s^*$ would have the objective to maximize its own reward, that is, the money it earns from playing a whole round. If trained successfully, it should have super-human performance. However, when policy plays with itself it should converge into a nash-equilibrium. 
+
+\subsection{Multi-Agent Poker AI}
+
+Once single-agent poker AI policy has reached optimality $\pi_s^*$ it can be treated as a baseline. We set up a new table where we have all but 2 seats being played according to $\pi_s^*$. Now in order to learn fully observable multi-agent poker AI, we allow a new pair of agents to sit at the remaining seats at the poker table and see each other hand. As they play with fixed $\pi_s^*$ they jointly learn $\pi_m^*$ with the objective of maximizing their joint reward. This means one agent can learn to sacrifice its reward as long as their total rewards are maximized. 
+
+We can repeat this experiment where we inform the pair of agents about the other existence but do not allow them to see the other's cards. This is a much more practical situation and would be hard for the agents to learn in an imperfect information environment.
+
+\subsection{Behaviour Discriminator}
+
+Assuming we have learned the policies optimally $\pi_s^* \; \& \; \pi_m^*$ we can observe the shift in behaviour. We set up a table with 2 collaborative agents and the rest single agents. We would also have control with all agents playing like single agents as control. Then we would observe the difference in trajectories of the setup vs the control. If the divergence of entire trajectories is significant, we wish to train a model to identify which policy a particular trajectory came from. This discriminator would have practical use cases of being a poker cheating detector but also a generic way to observe divergence in policies.
+
+
+\bibliographystyle{apalike}
+\bibliography{bibliography.bib}
+
+{\bf Keywords:} Collaborative Multi-Agent RL, Poker AI
+
+\end{document}
