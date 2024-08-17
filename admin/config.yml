@@ -22,8 +22,10 @@ collections:
     folder: "content/articles" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     media_folder: ""
+    nested:
+      depth: 100 # max depth to show in the collection tree
 
-    slug: "{{title}}/index" # Filename template, e.g., YYYY-MM-DD-title.md
+    slug: "{{title}}" # Filename template, e.g., YYYY-MM-DD-title.md
     path: "{{year}}-{{month}}-{{day}}-{{slug}}/index"
 
     fields: # The fields for each document, usually in front matter
@@ -37,6 +39,13 @@ collections:
           default: ["blog"],
         }
       - {
+          label: "Tags",
+          name: "tags",
+          widget: "list",
+          allow_add: true,
+          default: [],
+        }
+      - {
           label: "Featured Image",
           name: "featured_image",
           widget: "image",
@@ -44,29 +53,7 @@ collections:
         }
       - { label: Thumbnail, name: thumbnail, widget: image, required: false }
       - { label: "Body", name: "body", widget: "markdown", required: true }
-  # - name: "ai" # Used in routes, e.g., /admin/collections/blog
-  #   label: "AI Articles" # Used in the UI
-  #   folder: "/content/articles/ai" # The path to the folder where the documents are stored
-  #   create: true # Allow users to create new documents in this collection
-  #   slug: "{{year}}-{{month}}-{{day}}-{{slug}}/index" # Filename template, e.g., YYYY-MM-DD-title.md
-  #   path: "{{year}}-{{month}}-{{day}}-{{slug}}/index"
-  #   fields: # The fields for each document, usually in front matter
-  #       - label: "Title"
-  #         name: "title"
-  #         widget: "string"
-  #       - { label: "Date", name: "date", widget: "datetime" }
-  #       - { label: "Draft", name: "draft", widget: "boolean", default: true }
-  #       - { label: "Categories", name: "categories", widget: "list", default: ["blog"] }
-  #       - label: "Featured Image"
-  #         name: "featured_image"
-  #         widget: "image"
-  #         required: false
-  #       - label: Thumbnail
-  #         name: thumbnail
-  #         widget: image
-  #         required: false
 
-  #       - { label: "Body", name: "body", widget: "markdown" }
   - name: "projects"
     label: "Projects" # Used in the UI
     folder: "content/projects" # The path to the folder where the documents are stored
@@ -94,3 +81,37 @@ collections:
         }
       - { label: Thumbnail, name: thumbnail, widget: image, required: false }
       - { label: "Body", name: "body", widget: "markdown", required: true }
+
+  - name: "cv"
+    label: "CV" # Used in the UI
+    folder: "content/cv" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{organization}}"
+    path: "{{organization}}/index"
+    summary: "{{organization}} - {{title}}"
+    media_folder: ""
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Organization", name: "organization", widget: "string" }
+      - { label: "Location", name: "location", widget: "string" }
+      - {
+          label: "From Date",
+          name: "from",
+          widget: "datetime",
+          date_format: "YYYY-MM-DD",
+        }
+      - {
+          label: "To Date",
+          name: "to",
+          widget: "datetime",
+          date_format: "YYYY-MM-DD",
+          required: false,
+        }
+      - { label: "Thumbnail", name: "thumbnail", widget: "image" }
+      - {
+          label: "Type",
+          name: "type",
+          widget: "select",
+          options: ["education", "employment"],
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
