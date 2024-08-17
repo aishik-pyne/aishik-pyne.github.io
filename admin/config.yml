@@ -1,19 +1,19 @@
-local_backend: true
-backend:
-  name: git-gateway
-
 site_url: "https://aishikpyne.com" # URL to the site with no trailing slash
-logo_url: https://your-site.com/favicon.png # URL to the site logo (optional)
+logo_url: https://aishikpyne.com/images/AishikPyneDP.jpeg # URL to the site logo (optional)
 show_preview_links: true # Show the "View post" button in the preview pane (optional)
 
+# Uncomment the following lines to use the local backend
+# local_backend: true
 # backend:
-#   name: github
-#   repo: aishik-pyne/aishikpyne.com # Path to your GitHub repository
-#   branch: main # Branch to update (optional; defaults to master)
-  
+#   name: git-gateway
+
+backend:
+  name: github
+  repo: aishik-pyne/aishikpyne.com # Path to your GitHub repository
+  branch: main # Branch to update (optional; defaults to master)
+
 media_folder: "images" # Media files will be stored in the repo under images/uploads
 public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
-
 
 collections:
   - name: "articles" # Used in routes, e.g., /admin/collections/blog
@@ -26,13 +26,23 @@ collections:
     path: "{{year}}-{{month}}-{{day}}-{{slug}}/index"
 
     fields: # The fields for each document, usually in front matter
-        - { label: "Title", name: "title", widget: "string" }
-        - { label: "Date", name: "date", widget: "datetime" }
-        - { label: "Draft", name: "draft", widget: "boolean", default: true }
-        - { label: "Categories", name: "categories", widget: "list", default: ["blog"] }
-        - { label: "Featured Image", name: "featured_image", widget: "image", required: false }
-        - { label: Thumbnail, name: thumbnail, widget: image, required: false}
-        - { label: "Body", name: "body", widget: "markdown", required: true}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
+      - {
+          label: "Categories",
+          name: "categories",
+          widget: "list",
+          default: ["blog"],
+        }
+      - {
+          label: "Featured Image",
+          name: "featured_image",
+          widget: "image",
+          required: false,
+        }
+      - { label: Thumbnail, name: thumbnail, widget: image, required: false }
+      - { label: "Body", name: "body", widget: "markdown", required: true }
   # - name: "ai" # Used in routes, e.g., /admin/collections/blog
   #   label: "AI Articles" # Used in the UI
   #   folder: "/content/articles/ai" # The path to the folder where the documents are stored
@@ -56,3 +66,30 @@ collections:
   #         required: false
 
   #       - { label: "Body", name: "body", widget: "markdown" }
+  - name: "projects"
+    label: "Projects" # Used in the UI
+    folder: "content/projects" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    media_folder: ""
+
+    slug: "{{title}}/index" # Filename template, e.g., YYYY-MM-DD-title.md
+    path: "{{year}}-{{month}}-{{day}}-{{slug}}/index"
+
+    fields: # The fields for each document, usually in front matter
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
+      - {
+          label: "Categories",
+          name: "categories",
+          widget: "list",
+          default: ["blog"],
+        }
+      - {
+          label: "Featured Image",
+          name: "featured_image",
+          widget: "image",
+          required: false,
+        }
+      - { label: Thumbnail, name: thumbnail, widget: image, required: false }
+      - { label: "Body", name: "body", widget: "markdown", required: true }
