@@ -4,13 +4,14 @@ show_preview_links: true # Show the "View post" button in the preview pane (opti
 
 # Uncomment the following lines to use the local backend
 # local_backend: true
-# backend:
-#   name: git-gateway
-
 backend:
-  name: github
-  repo: aishik-pyne/aishikpyne.com # Path to your GitHub repository
+  name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
+
+# backend:
+#   name: github
+#   repo: aishik-pyne/aishikpyne.com # Path to your GitHub repository
+#   branch: main # Branch to update (optional; defaults to master)
 
 media_folder: "images" # Media files will be stored in the repo under images/uploads
 public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
